@@ -1,8 +1,24 @@
-# dreambooth-style-training
-This repository features an implementation of DreamBooth with Stable Diffusion for training custom styles
+# Dreambooth training to replicate an art style
+This repository features an implementation of DreamBooth with Stable Diffusion for training art styles. 
 # 💻 Setup and the Dataset
-I ran everything on Google Colab, which is awesome because they give you free access to a Tesla T4 GPU and about 15GB of RAM. This setup is great for average or basic training where you just want to learn and get comfortable with DreamBooth. However, for high-level training with larger datasets or more complex projects, you might run into out-of-memory errors—this is pretty common on Colab. In such cases, you may need to look for better hardware or a more robust system. For reference, my training utilized about 11.4GB of RAM out of the 15GB available. 
+I ran everything on Google Colab, which is awesome because they give you free access to a Tesla T4 GPU and about 15GB of RAM. For reference, my training utilized about 11.4GB of RAM out of the 15GB available. I trained four different DreamBooth models, tweaking hyperparameters and learning rates to experiment with results. Two models stood out:
+- Manhwa-Style Model: Trained on 24 high-quality manhwa images, focused on character faces.
+- Custom Fox Character Model: Built with 17 hand-drawn images of a stylized fox character. 
+## For Datasets
+- High-Volume (100–200 Images): Requires more training steps and time but offers greater versatility in generating a variety of poses, expressions, and details, especially for specific character styles.
 
-The dataset I used consisted of 24 high-quality manhwa images, and trust me, the quality of your images makes all the difference — bad inputs lead to bad outputs. To get the best results, avoid using blurry or low-resolution images and make sure to remove watermarks, text, or graininess, as these can mess up the model’s training. Cropping all images to the same size might also help, but honestly, I skipped that step and still managed to get decent results! Nearly 97% of the images I used focused on faces. If you’re training to copy a specific style, make sure the style is consistent across all images. Mixing styles or having varied lighting on the subject increases the chances of incorrect outputs. 
+- Low-Volume (25–30 Images): Faster to train (5,000–6,000 steps) and produces good results but may limit variety, such as in poses or expressions.
 
-I stored all my images randomly in a single google drive folder without labeling them or organizing them into class-specific subfolders. If you’d like, you can organize your dataset into folders based on classes, like “men” or “women,” within a root folder. However, since I didn’t try this approach, I can’t say for sure if it improves training or how it affects the overall results.
+To get the best results, avoid using blurry or low-resolution images and make sure to remove watermarks, text, or graininess, as these can mess up the model’s training. Crop them to the same size to maintain uniformity. If you’re training to copy a specific art style, make sure the style is consistent across all images. Mixing styles or having varied lighting on the subject increases the chances of incorrect outputs. 
+> If your dataset includes art directly taken from an artist, always seek their permission to avoid getting into future troubles. Alternatively, you can generate datasets using AI tools like DALL-E or Stable Diffusion, use images of well-known anime/cartoon/comic characters, or create custom designs yourself.
+
+# Training Parameters
+Following are the main hyperparameters to focus on for training. The table shows the best values for each hyperparameter that worked for me without running into Colab’s out-of-memory errors. However, it's important to note that these values may not be optimal for every use case. The effectiveness of these parameters depends heavily on the type of dataset and model you're using.
+| **Parameter**                  | **Value**       |  
+|---------------------------------|-----------------|  
+| **Resolution**                 | `512`           |  
+| **Learning Rate**              | `3e-7`          |  
+| **Learning Rate Scheduler**    | `constant`      |  
+| **Validation Steps**           | `100`           |  
+| **Batch Size**                 | `2`             |  
+| **Gradient Accumulation Steps**| `4`             |  
