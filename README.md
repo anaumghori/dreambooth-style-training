@@ -3,12 +3,7 @@ This repository features an implementation of DreamBooth with Stable Diffusion f
 
 - [DreamBooth Paper](https://huggingface.co/papers/2208.12242)
 - [DreamBooth Guide](https://huggingface.co/docs/diffusers/en/training/dreambooth)
-
-### Articles
-- [Training Stable Diffusion with Dreambooth using Diffusers](https://huggingface.co/blog/dreambooth)
-- [DreamBooth fine-tuning example](https://huggingface.co/docs/diffusers/v0.11.0/en/training/dreambooth)
-
-### Repos
+### Repos that I recommend
 - [Diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
 - [sd-dreambooth-extension](https://github.com/d8ahazard/sd_dreambooth_extension)
 
@@ -36,3 +31,11 @@ Following are the main hyperparameters to focus on for training. The table shows
 | **Validation Steps**           | `100`           |  
 | **Batch Size**                 | `2`             |  
 | **Gradient Accumulation Steps**| `4`             |  
+
+# Results
+
+
+https://github.com/user-attachments/assets/d44b0497-8cea-4659-8260-f3844e5fd62f
+
+
+
