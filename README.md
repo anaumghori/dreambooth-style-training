@@ -1,12 +1,7 @@
 # Dreambooth Custom Style Training
-This repository features an implementation of DreamBooth with Stable Diffusion for training custom art styles. Please start by exploring the official documentation and paper to get familiar with DreamBooth.
-
-- [DreamBooth Paper](https://huggingface.co/papers/2208.12242)
+This repository features an implementation of DreamBooth with Stable Diffusion for training custom art styles. Please refer to the following guide and repo to get more familiar with DreamBooth. 
 - [DreamBooth Guide](https://huggingface.co/docs/diffusers/en/training/dreambooth)
-### Repos that I recommend
 - [Diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
-- [sd-dreambooth-extension](https://github.com/d8ahazard/sd_dreambooth_extension)
-
 
 # 💻 Setup and the Dataset
 I ran everything on Google Colab, which is awesome because they give you free access to a Tesla T4 GPU and about 15GB of RAM. For reference, my training utilized about 11.4GB of RAM out of the 15GB available. I trained four different DreamBooth models, tweaking hyperparameters and learning rates to experiment with results. Out of them, two models stood out:
