@@ -4,9 +4,11 @@ This repository features an implementation of DreamBooth with Stable Diffusion f
 - [Diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
 
 # 💻 Setup and the Dataset
-I ran everything on Google Colab, which is awesome because they give you free access to a Tesla T4 GPU and about 15GB of RAM. For reference, my training utilized about 11.4GB of RAM out of the 15GB available. I trained four different DreamBooth models, tweaking hyperparameters and learning rates to experiment with results. Out of them, two models stood out:
-- Manhwa-Style Model: Trained on 24 high-quality women manhwa images, focused on character faces.
-- Custom Fox Character Model: Trained with 15 hand-drawn images of a stylized fox character. 
+I conducted all my work on Google Colab, which offers free access to a GPU and around 15GB of RAM. During training, my setup used approximately 11.4GB of the available 15GB RAM. I trained four different DreamBooth models, experimenting with various hyperparameters and learning rates to achieve the best results. Out of these, two models stood out:
+
+- Manhwa-Style Model: Focused on character faces, this model was trained using 24 high-quality images of women in a manhwa art style.
+- Custom Fox Character Model: Trained with 15 hand-drawn images of a stylized fox character.
+  
 ## For Datasets
 `- High-Volume (100–200 Images):` Requires more training steps and time but offers greater versatility in generating a variety of poses, expressions, and details, especially for specific character styles.
 
